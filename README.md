@@ -5,7 +5,7 @@
 - This repo contains example code of using **Python Pytest Timeouts**, including an automated test case using Selenium Webdriver on LambdaTest Cloud platform.
 - This project uses Pytest framework to run the tests.
 
-## :question: What is a Configuration File?
+## :question: More about timeouts...
 In the realm of test automation, timeouts play a vital role in ensuring test stability and avoiding test failures caused by unforeseen delays or unresponsive components. By setting appropriate timeouts, we can control the maximum duration a test is allowed to run or wait for a specific condition. This helps in maintaining test efficiency, detecting potential issues promptly, and preventing tests from hanging indefinitely.
 
 
