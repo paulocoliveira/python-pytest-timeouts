@@ -58,23 +58,8 @@ def driver(request):
     
     driver.quit
 
-def test_demo_form_using_global_timeout_not_exceeding(driver):
-    driver.get(config.get('WEBSITE', 'url'))
-
-    # Find an input element by its ID and enter text
-    input_element = driver.find_element(By.ID, "user-message")
-    input_element.send_keys("This is a timeout text!")
-
-    # Find an element by its ID and click on it
-    element = driver.find_element(By.ID, "showInput")
-    element.click()
-
-    # Find an element by its ID and extract its text
-    element = driver.find_element(By.ID, "message")
-    assert element.text == "This is a timeout text!"
-
-@pytest.mark.timeout(50)
-def test_demo_form_using_pytest_timeout_not_exceeding(driver):
+@pytest.mark.timeout(300)
+def test_demo_form_using_per_test_timeout(driver):
     driver.get(config.get('WEBSITE', 'url'))
 
     # Find an input element by its ID and enter text

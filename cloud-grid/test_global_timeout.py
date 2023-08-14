@@ -41,7 +41,8 @@ def driver(request):
         "w3c": config.get('CLOUDGRID', 'w3c'),
         "browserName": browser_name,
         "browserVersion": config.get('CLOUDGRID', 'browser_version'),
-        "selenium_version": config.get('CLOUDGRID', 'selenium_version')
+        "selenium_version": config.get('CLOUDGRID', 'selenium_version'),
+        "networkThrottling": "Regular 3G"
     }
 
     options = web_driver
@@ -58,15 +59,12 @@ def driver(request):
     
     driver.quit
 
-def test_demo_form_using_global_timeout_exceeding(driver):
+def test_demo_form_using_global_timeout(driver):
     driver.get(config.get('WEBSITE', 'url'))
 
     # Find an input element by its ID and enter text
     input_element = driver.find_element(By.ID, "user-message")
     input_element.send_keys("This is a timeout text!")
-
-    # Simulate a time-consuming operation 
-    time.sleep(31)
 
     # Find an element by its ID and click on it
     element = driver.find_element(By.ID, "showInput")
