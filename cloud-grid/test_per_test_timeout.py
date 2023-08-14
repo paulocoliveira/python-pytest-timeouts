@@ -41,7 +41,8 @@ def driver(request):
         "w3c": config.get('CLOUDGRID', 'w3c'),
         "browserName": browser_name,
         "browserVersion": config.get('CLOUDGRID', 'browser_version'),
-        "selenium_version": config.get('CLOUDGRID', 'selenium_version')
+        "selenium_version": config.get('CLOUDGRID', 'selenium_version'),
+        "networkThrottling": "Regular 3G"
     }
 
     options = web_driver
